@@ -1,0 +1,147 @@
+openapi: 3.1.0
+x-stoplight:
+  id: kfx8btnf6y28f
+info:
+  title: Todo
+  version: '1.0'
+  summary: This is Todo app.
+  description: Todo
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /todo-list:
+    get:
+      summary: Get Todo List
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  x-stoplight:
+                    id: 98ssakzja1pls
+                  type: object
+                  required:
+                    - id
+                    - name
+                    - description
+                    - priority
+                    - created_at
+                    - expires_at
+                  properties:
+                    id:
+                      type: number
+                      x-stoplight:
+                        id: gwd0fnbmsxwgv
+                    name:
+                      type: string
+                      x-stoplight:
+                        id: im796pbsd6gap
+                    description:
+                      type: string
+                      x-stoplight:
+                        id: ecwce0tjz2h46
+                    priority:
+                      x-stoplight:
+                        id: 5ss9ihtvqyjwi
+                      enum:
+                        - high
+                        - middle
+                        - low
+                    created_at:
+                      type: string
+                      x-stoplight:
+                        id: 4q75b26m2uq5r
+                      format: date-time
+                    expires_at:
+                      type: string
+                      x-stoplight:
+                        id: k5w8jng5a3w03
+                      format: date-time
+      operationId: get-todo-list
+      x-stoplight:
+        id: mgpbeih36cow2
+      description: Todoリスト取得API
+      parameters: []
+    post:
+      summary: Create Todo
+      tags: []
+      responses:
+        '201':
+          description: Created
+          content: {}
+      operationId: post-todo-list
+      x-stoplight:
+        id: twyt3dgs9dyqi
+      requestBody:
+        content:
+          application/x-tex:
+            schema:
+              type: object
+              required:
+                - name
+                - description
+                - priority
+                - expires_at
+              properties:
+                name:
+                  type: string
+                  x-stoplight:
+                    id: yvghbmb4onptw
+                description:
+                  type: string
+                  x-stoplight:
+                    id: tommnkkjkjd6e
+                priority:
+                  x-stoplight:
+                    id: 1pg95afzdq0kp
+                  enum:
+                    - high
+                    - middle
+                    - low
+                expires_at:
+                  type: string
+                  x-stoplight:
+                    id: h208nnxcy0ins
+                  format: date-time
+    delete:
+      summary: Delete Todo
+      tags: []
+      responses:
+        '204':
+          description: No Content
+      operationId: delete-todo-list
+      x-stoplight:
+        id: 1yajhd3krdte5
+      parameters:
+        - schema:
+            type: number
+          in: query
+          name: id
+          description: Task id
+    put:
+      summary: Update Todo
+      tags: []
+      responses:
+        '204':
+          description: No Content
+      operationId: put-todo-list
+      x-stoplight:
+        id: gyzjzl6r5f90s
+      parameters:
+        - schema:
+            type: number
+          in: query
+          name: id
+          description: Task id
+      requestBody:
+        content:
+          application/x-bittorrent:
+            schema:
+              type: object
+              properties: {}
+components:
+  schemas: {}
