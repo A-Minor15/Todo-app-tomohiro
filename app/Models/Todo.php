@@ -9,7 +9,6 @@ class Todo extends Model
 {
     use HasFactory;
 
-
     public function getTodos() {
         $todos = $this->select('id', 'name', 'description', 'priority', 'expires_at', 'created_at')->get();
 
