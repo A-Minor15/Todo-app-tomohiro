@@ -15,9 +15,5 @@ use App\Http\Controllers\TodoController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::get('/todo-list', [TodoController::class, 'index']);
-Route::post('/craete', [TodoController::class, 'create']);
+Route::post('/create', [TodoController::class, 'create']);

@@ -22,16 +22,7 @@ class TodoController extends Controller
         );
     }
 
-    public function create(Request $request) {
-        $validate = [
-            'name' => 'required|max:50',
-            'description' => 'nullable|max:255',
-            'priority' => 'nullable|in:low, middle, high',
-            'expired_at' => 'nullable|date',
-        ];
-
-        $request->validate($validate);
-
+    public function create(TodoRequest $request) {
         $new_todo = Todo::create([
             'name' => $request->input('title'),
             'description' => $request->input('description'),
