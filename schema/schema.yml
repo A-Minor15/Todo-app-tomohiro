@@ -107,6 +107,7 @@ paths:
                   x-stoplight:
                     id: h208nnxcy0ins
                   format: date-time
+        description: ''
     delete:
       summary: Delete Todo
       tags: []

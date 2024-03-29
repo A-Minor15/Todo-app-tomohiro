@@ -15,5 +15,6 @@ use App\Http\Controllers\TodoController;
 |
 */
 
-Route::get('/todo-list', [TodoController::class, 'index']);
-Route::post('/create', [TodoController::class, 'create']);
+Route::get('/todo-list', [TodoController::class, 'index'])->name('index');
+
+Route::post('/todo-list', [TodoController::class, 'store']);
