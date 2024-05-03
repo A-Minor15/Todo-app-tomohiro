@@ -43,4 +43,18 @@ class TodoController extends Controller
             201
         );
     }
+
+    public function destroy($id) {
+        $this->todo->destroy($id);
+
+        $response = [
+            'message' => 'Todo Deleted.',
+        ];
+
+        return response()->json(
+            $response,
+            204
+        );
+    }
+
 }

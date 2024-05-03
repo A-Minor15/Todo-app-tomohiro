@@ -16,5 +16,6 @@ use App\Http\Controllers\TodoController;
 */
 
 Route::get('/todo-list', [TodoController::class, 'index'])->name('index');
-
 Route::post('/todo-list', [TodoController::class, 'store']);
+Route::patch('/{id}/todo-list', [TodoController::class, 'edit']);
+Route::delete('/{id}/todo-list', [TodoController::class, 'destroy']);
