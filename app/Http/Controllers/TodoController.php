@@ -54,7 +54,8 @@ class TodoController extends Controller
 
     public function update(Request $request, $id) {
         $update_todo = $this->todo->findOrFail($id);
-        $update_todo = new Todo();
+
+        Log::info($this->todo->findOrFail($id));
 
         $update_todo->name = $request->input('title');
         $update_todo->description = $request->input('description');
